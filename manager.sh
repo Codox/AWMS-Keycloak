@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat << 'EOF'
     ___  _       __ __  ___ _____    __  __                           __               _                   __ __                    __               __  
    /   || |     / //  |/  // ___/   / / / /__  __ ____   ___   _____ / /____   ____ _ (_)_____            / //_/___   __  __ _____ / /____   ____ _ / /__
@@ -22,18 +24,13 @@ This service will provide the tools for you to:
 
 EOF
 
-setup_keycloak() {
-
-}
-
 menu() {
 echo "
 Select an option from below
 
 1) Setup Keycloak
-
 0) Exit
-\n"
+"
 
     read a
     case $a in 
@@ -43,4 +40,9 @@ Select an option from below
     esac
 }
 
+setup_keycloak() {
+    
+}
+
 menu
+
