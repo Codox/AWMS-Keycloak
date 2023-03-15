@@ -7,4 +7,40 @@ cat << 'EOF'
                                         /____//_/                           /____/                                 /____/                                
 EOF
 
-echo "\nWelcome to the AWMS Hyperlogic: Keycloak configuration service"
+cat << 'EOF' 
+
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+
+Welcome to the AWMS Hyperlogic: Keycloak configuration service
+
+This service will provide the tools for you to:
+- Setup Keycloak for new installations
+- Update existing configurations for Keycloak
+- Rebuild Keycloak information
+
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+
+EOF
+
+setup_keycloak() {
+
+}
+
+menu() {
+echo "
+Select an option from below
+
+1) Setup Keycloak
+
+0) Exit
+\n"
+
+    read a
+    case $a in 
+        1) setup_keycloak ; menu ;;
+        0) exit 0 ;;
+        *) echo "Invalid command";
+    esac
+}
+
+menu
