@@ -15,34 +15,43 @@ cat << 'EOF'
 
 Welcome to the AWMS Hyperlogic: Keycloak configuration service
 
-This service will provide the tools for you to:
-- Setup Keycloak for new installations
-- Update existing configurations for Keycloak
-- Rebuild Keycloak information
+Please don't break anything :)
 
 =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 
 EOF
 
-menu() {
-echo "
-Select an option from below
+while true
+do
+    echo "Select an option from below"
+    echo "1) Configure Keycloak"
+    echo "2) Wipe Keycloak"
+    echo "0) Exit"
 
-1) Setup Keycloak
-0) Exit
-"
+    read -p "Option > " selection
 
-    read a
-    case $a in 
-        1) setup_keycloak ; menu ;;
-        0) exit 0 ;;
-        *) echo "Invalid command";
+    case $selection in
+        1)
+            echo "1) Called"
+        ;;
+
+        2)
+            echo "2) Called 2"
+        ;;
+
+        0)
+            echo "Goodbye!"
+            exit 0
+        ;;
+
+        *) 
+            echo "Choice is invalid"
+        ;;
     esac
-}
+done
 
 setup_keycloak() {
-    
+    echo "Test"
 }
 
-menu
 
