@@ -21,6 +21,14 @@ Please don't break anything :)
 
 EOF
 
+keycloak_require_environment_variables=(
+    # Admin credentials
+    "KEYCLOAK_ADMIN_USER",
+    "KEYCLOAK_ADMIN_PASSWORD"
+
+    # Postgres credentials
+)
+
 while true
 do
     echo "Select an option from below"
@@ -50,8 +58,9 @@ do
     esac
 done
 
-setup_keycloak() {
-    echo "Test"
+configure_keycloak() {
+    # Verify environment variables are set
+    
 }
 
 
