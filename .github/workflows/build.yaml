@@ -1,0 +1,14 @@
+name: Build Images
+
+on:
+  push:
+    tags:
+      - '*'
+
+env:
+  REGISTRY: ghcr.io
+  
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
