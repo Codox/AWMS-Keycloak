@@ -26,10 +26,18 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: rexchoppers
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v2
+      
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
           context: .
           file: docker/Dockerfile.keycloak
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ env.REGISTRY }}/codox/awms-hyperlogic-keycloak:0.0.1
