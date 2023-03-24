@@ -6,6 +6,6 @@ This repository holds the configuration and Docker images to configure Keycloak 
 There are **2** images associated with this repository:
 
 - **awms-hyperlogic-keycloak**: The Keycloak server
-- **awms-hyperlogic-keycloak-manager**: The CLI tool responsible for applying configurations to Keycloak between version updates
+- **awms-hyperlogic-keycloak-cli**: The CLI tool responsible for applying configurations to Keycloak between version updates
 ## Installation
 TBA
