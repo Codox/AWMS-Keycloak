@@ -1,19 +1,9 @@
 FROM bitnami/keycloak-config-cli:5.6.1
 
-# Setup as root user to do some custom things
-USER root
-
-# Install jq
-RUN install_packages jq
-
-RUN mkdir /misc && chmod 777 /misc
-
-USER 1001
-
 # Set the location for files to be imported
 ENV IMPORT_FILES_LOCATIONS=/config/*
 
-# Copy Realm configs
+# Copy realm configs
 COPY config/awms-realm /config/awms-realm
 
 # Copy user specific environment variables
@@ -21,6 +11,17 @@ COPY keycloak-cli-config.json /misc/keycloak-cli-config.json
 
 # Copy Keycloak CLI script
 COPY run-keycloak-cli.sh /bin/run-keycloak-cli.sh
+
+# Setup as root user to do some custom things
+USER root
+
+# Install jq
+RUN install_packages jq
+
+# TODO: Change 777 because bad
+RUN chmod -R 777 /misc && chmod -R 777 /config
+
+USER 1001
 
 # Override endpoint for our requirements
 ENTRYPOINT []
