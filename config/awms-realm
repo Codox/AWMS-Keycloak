@@ -1,0 +1,21 @@
+{
+    "id": "awms",
+    "realm": "awms",
+    "displayName": "AWMS",
+    "clients": [
+        {
+            "id": "0ca3b679-a67d-4417-a3ab-65ffedcc2162",
+            "clientId": "awms-web-client",
+            "description": "AWMS Web Client",
+            "rootUrl": "${CLIENT_AWMS_WEB_CLIENT_ROOT_URL}",
+            "adminUrl": "",
+            "baseUrl": "/",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": ${CLIENT_AWMS_WEB_CLIENT_REDIRECT_URIS},
+            "webOrigins": ${CLIENT_AWMS_WEB_CLIENT_WEB_ORIGINS},
+        }
+    ]
+}
