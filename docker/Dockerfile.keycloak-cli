@@ -1,6 +1,7 @@
 FROM bitnami/keycloak-config-cli:5.6.1
 
-ENV IMPORT_FILES=/config
+ENV IMPORT_FILES_LOCATIONS=/config/*
 
 # Copy Realm configs
 COPY config/awms-realm.json /config/awms-realm.json
+
