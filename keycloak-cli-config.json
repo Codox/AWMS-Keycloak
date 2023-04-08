@@ -1,9 +1,0 @@
-{
-    "CLIENT_AWMS_WEB_CLIENT_ROOT_URL": "https://portal.thelemontreecompany.co.uk",
-    "CLIENT_AWMS_WEB_CLIENT_REDIRECT_URIS": [
-        "/oauth/redirect"
-    ],
-    "CLIENT_AWMS_WEB_CLIENT_WEB_ORIGINS": [
-        "/"
-    ]
-}
