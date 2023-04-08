@@ -5,3 +5,8 @@ ENV IMPORT_FILES_LOCATIONS=/config/*
 # Copy Realm configs
 COPY config/awms-realm.json /config/awms-realm.json
 
+# Copy Keycloak CLI script
+COPY run-keycloak-cli.sh /bin/run-keycloak-cli.sh
+
+# Run the Keycloak CLI script
+CMD ["bash", "/bin/run-keycloak-cli.sh"]
