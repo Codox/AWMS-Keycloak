@@ -19,6 +19,7 @@ USER root
 RUN install_packages jq
 
 # TODO: Change 777 because bad
+RUN mkdir /misc
 RUN chmod -R 777 /misc && chmod -R 777 /config
 
 USER 1001
