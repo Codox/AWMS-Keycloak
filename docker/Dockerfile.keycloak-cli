@@ -7,7 +7,7 @@ ENV IMPORT_FILES_LOCATIONS=/config/*
 COPY config/awms-realm /config/awms-realm
 
 # Copy user specific environment variables
-COPY keycloak-cli-config.json /misc/keycloak-cli-config.json
+# COPY keycloak-cli-config.json /misc/keycloak-cli-config.json
 
 # Copy Keycloak CLI script
 COPY run-keycloak-cli.sh /bin/run-keycloak-cli.sh
