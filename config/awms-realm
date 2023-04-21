@@ -6,6 +6,7 @@
         {
             "id": "0ca3b679-a67d-4417-a3ab-65ffedcc2162",
             "clientId": "awms-web-app",
+            "name: "AWMS: Web App",
             "description": "AWMS: Web App",
             "rootUrl": ${CLIENT_AWMS_WEB_APP_ROOT_URL},
             "adminUrl": "",
