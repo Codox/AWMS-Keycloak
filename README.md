@@ -13,4 +13,7 @@ TBA
 
 ## Misc Notes
 
-docker run -e KEYCLOAK_URL=http://keycloak:8080 -e KEYCLOAK_USER=awms -e KEYCLOAK_PASSWORD=therootpassword --network=awms-microservices_default mytest
+- docker build -t mytest -f docker/Dockerfile.keycloak-cli .
+- docker run -it -e KEYCLOAK_URL=http://keycloak:8080 -e KEYCLOAK_USER=awms -e KEYCLOAK_PASSWORD=therootpassword -v ${PWD}/keycloak-cli-config.json:/misc/keycloak-cli-config.json --network=awms-microservices_default mytest bash
+
+- docker run -e KEYCLOAK_URL=http://keycloak:8080 -e KEYCLOAK_USER=awms -e KEYCLOAK_PASSWORD=therootpassword --network=awms-microservices_default mytest
