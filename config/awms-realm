@@ -2,6 +2,7 @@
     "id": "awms",
     "realm": "awms",
     "displayName": "AWMS",
+    "enabled": true,
     "clients": [
         {
             "id": "0ca3b679-a67d-4417-a3ab-65ffedcc2162",
@@ -12,12 +13,12 @@
             "adminUrl": "",
             "baseUrl": "/",
             "surrogateAuthRequired": false,
-            "enabled": true,
             "alwaysDisplayInConsole": false,
             "clientAuthenticatorType": "client-secret",
             "redirectUris": ${CLIENT_AWMS_WEB_APP_REDIRECT_URIS},
             "webOrigins": ${CLIENT_AWMS_WEB_APP_WEB_ORIGINS},
             "notBefore": 0,
+            "enabled": true,
             "bearerOnly": false,
             "consentRequired": false,
             "standardFlowEnabled": true,
