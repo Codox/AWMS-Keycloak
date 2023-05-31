@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: 'postgres:13.5-alpine'
+    environment:
+      - POSTGRES_USER=keycloak
+      - POSTGRES_PASSWORD=therootpassword
+      - POSTGRES_DB=keycloak
+    restart: always
+    ports:
+      - "5400:5432"
+    volumes:
+      - db-postgres:/var/lib/postgresql/data
+
+  keycloak:
+    image: ghcr.io/codox/awms-hyperlogic-keycloak:0.0.1
+    environment:
+      - KEYCLOAK_ADMIN_USER=keycloak
+      - KEYCLOAK_ADMIN_PASSWORD=therootpassword
+      - KEYCLOAK_DATABASE_NAME=postgres
+      - KEYCLOAK_DATABASE_HOST=postgres
+      - KEYCLOAK_DATABASE_PORT=5432
+      - KEYCLOAK_DATABASE_USER=keycloak
+      - KEYCLOAK_DATABASE_PASSWORD=therootpassword
+      - KEYCLOAK_BIND_ADDRESS=0.0.0.0
+      - KEYCLOAK_PRODUCTION=false
+    ports:
+      - "8080:8080"
+
+volumes:
+  db-postgres: {}
