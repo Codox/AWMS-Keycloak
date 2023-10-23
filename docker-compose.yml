@@ -14,7 +14,7 @@ services:
       - db-postgres:/var/lib/postgresql/data
 
   keycloak:
-    image: ghcr.io/codox/awms-hyperlogic-keycloak:0.0.1
+    image: ghcr.io/codox/awms-keycloak:0.0.1
     environment:
       - KEYCLOAK_ADMIN_USER=keycloak
       - KEYCLOAK_ADMIN_PASSWORD=therootpassword
