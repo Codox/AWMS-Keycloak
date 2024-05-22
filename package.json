@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index.js",
+    "server": "nodemon --watch 'server/**/*.ts' --exec 'ts-node' server/index.ts",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "tsc && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
@@ -19,7 +23,9 @@
   "homepage": "https://github.com/Codox/AWMS-Hyperlogic-Keycloak#readme",
   "dependencies": {
     "axios": "^1.7.2",
-    "express": "^4.19.2"
+    "concurrently": "^8.2.2",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
