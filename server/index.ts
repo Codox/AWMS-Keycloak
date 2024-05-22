@@ -7,15 +7,17 @@ const app = express();
 const port = process.env.PORT || 5000;
 const router = express.Router();
 
-app.use('/api/keycloak', testRoutes);
+
+const buildPath = path.join(__dirname, '../client/build');
+app.use(express.static(buildPath));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use('/api/keycloak', testRoutes);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+  res.sendFile(path.join(buildPath, 'index.html'));
 });
 
 app.listen(port, () => {

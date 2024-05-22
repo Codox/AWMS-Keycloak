@@ -2,7 +2,8 @@
   "name": "awms-keycloak-configuration-tool",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.ts",
+  "bin": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
     "server": "nodemon --watch 'server/**/*.ts' --exec 'ts-node' server/index.ts",
@@ -32,5 +33,14 @@
     "@types/node": "^20.12.12",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
+  },
+  "pkg": {
+    "assets": [
+      "client/build/**/*",
+      "server/**/*.ts"
+    ],
+    "scripts": [
+      "dist/**/*.js"
+    ]
   }
 }
